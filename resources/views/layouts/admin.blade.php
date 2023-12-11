@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{{ asset('backend') }}/dist/css/adminlte.min.css">
   <!-- Toastr -->
   <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/plugins/toastr/toastr.css">
+  <!-- SummerNote -->
+  <link rel="stylesheet" href="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="{{ asset('backend') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -28,11 +30,6 @@
 @else
 
     <div class="wrapper" style="width: 100%">
-
-    {{-- <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="{{ asset('backend') }}/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-    </div> --}}
 
     <!-- Navbar -->
 
@@ -90,6 +87,8 @@
 <script src="{{ asset('backend') }}/plugins/sweetalert/sweetalert.min.js"></script>
 <!-- dropify -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.js"></script>
+<!-- summernote -->
+<script src="{{ asset('backend') }}/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="{{ asset('backend') }}/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('backend') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -104,6 +103,13 @@
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{ asset('backend') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+{{-- summernote --}}
+<script>
+  $(function () {
+    $('#summernote').summernote()
+  })
+</script>
+{{-- delete --}}
 <script>  
   $(document).on("click", "#delete", function(e){
       e.preventDefault();

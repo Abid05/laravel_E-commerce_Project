@@ -148,6 +148,8 @@
         });
       });
 
+      
+
       //Edit Script
 
       $('body').on('click','.edit',function(){

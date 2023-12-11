@@ -12,4 +12,8 @@ class Subcategory extends Model
 
     protected $fillable = ['subcategory_name','subcategory_slug','category_id'];
 
+    public function category(){ // one to one relation---belongs to means subcategory... category table er modde ontorgoto..
+    	return $this->belongsTo(Category::class);
+    }
+
 }

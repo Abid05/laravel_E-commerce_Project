@@ -17,6 +17,7 @@ class ChildCategoryController extends Controller
     {
         $this->middleware('auth');
     }
+    
     //index method for showing data
     public function index(Request $request){
 
