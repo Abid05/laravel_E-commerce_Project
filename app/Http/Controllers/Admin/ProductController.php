@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -88,7 +90,7 @@ class ProductController extends Controller
                     ->addColumn('action', function($row){
                         $actionbtn='
                         <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
-                        <a href="#" class="btn btn-info btn-sm edit"><i class="fas fa-edit"></i></a> 
+                        <a href="'.route('product.edit',[$row->id]).'" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a> 
                         <a href="'.route('product.delete',[$row->id]).'" class="btn btn-danger btn-sm" id="delete"><i class="fas fa-trash"></i>
                         </a>';
                        return $actionbtn;   
@@ -146,7 +148,7 @@ class ProductController extends Controller
        $data['video']=$request->video;
        $data['featured']=$request->featured;
        $data['today_deal']=$request->today_deal;
-    //    $data['product_slider']=$request->product_slider;
+       $data['product_slider']=$request->product_slider;
        $data['status']=$request->status;
     //    $data['trendy']=$request->trendy;
        $data['admin_id']=Auth::id();
@@ -173,6 +175,17 @@ class ProductController extends Controller
        $notification=array('messege' => 'Product Inserted!', 'alert-type' => 'success');
        return redirect()->back()->with($notification);
 
+    }
+
+    //edit method
+    public function edit($id){
+        $product=DB::table('products')->where('id',$id)->first();
+        //$product=Product::findorfail($id);
+        $category=Category::all();
+        $brand=Brand::all();
+        $warehouse=DB::table('warehouses')->get();
+        $pickup_point=DB::table('pickup_point')->get();
+        return view('admin.product.edit',compact('product','category','brand','warehouse','pickup_point'));
     }
 
     //not featured

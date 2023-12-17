@@ -78,7 +78,7 @@ Route::group(['middleware' => 'is_admin'],function(){
         Route::get('/create',[ProductController::class,'create'])->name('product.create');
         Route::get('/delete/{id}',[ProductController::class,'destroy'])->name('product.delete');
         Route::post('/store',[ProductController::class,'store'])->name('product.store');
-        //Route::get('/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+        Route::get('/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
         //Route::post('/update',[ProductController::class,'update'])->name('product.update');
         Route::get('/active-featured/{id}',[ProductController::class,'activefeatured']);
         Route::get('/not-featured/{id}',[ProductController::class,'notfeatured']);

@@ -1,21 +1,17 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Front\IndexController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// Route::get('/url',[Controller::class,'demo']);
+//Frontend routes
 
-Route::get('/myurl',[Controller::class,'function2'])->name('my.url');
-
-Route::get('/myurl',[Controller::class,'function'])->name('my.url');
+    Route::get('/',[IndexController::class,'index']);
+    Route::get('/product-details/{slug}',[IndexController::class,'productDetails'])->name('product.details');

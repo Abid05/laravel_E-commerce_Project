@@ -9,4 +9,9 @@ class Brand extends Model
 {
     use HasFactory;
     protected $fillable = ['brand_name','brand_slug','brand_logo'];
+
+    // public function product(){ // one to one relation---belongs to means subcategory... category table er modde ontorgoto..
+    // 	return $this->hasMany(Product::class);
+    // }
+
 }

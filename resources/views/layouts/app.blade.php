@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/plugins/slick-1.8.0/slick.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend') }}/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/toastr/toastr.css') }}">
 
 </head>
 
@@ -79,7 +80,7 @@
 					<!-- Logo -->
 					<div class="col-lg-2 col-sm-3 col-3 order-1">
 						<div class="logo_container">
-							<div class="logo"><a href="#">OneTech</a></div>
+							<div class="logo"><a href="{{ url('/') }}">SmartTech</a></div>
 						</div>
 					</div>
 
@@ -140,9 +141,9 @@
 				</div>
 			</div>
 		</div>
-		
-		@include('layouts.front_partial.main_nav')
 
+		@yield('navbar')
+		
 	</header>
 	
     @yield('content')
@@ -156,7 +157,7 @@
 				<div class="col-lg-3 footer_col">
 					<div class="footer_column footer_contact">
 						<div class="logo_container">
-							<div class="logo"><a href="#">OneTech</a></div>
+							<div class="logo"><a href="#">SmartTech</a></div>
 						</div>
 						<div class="footer_title">Got Question? Call Us 24/7</div>
 						<div class="footer_phone">+38 068 005 3570</div>
@@ -262,8 +263,10 @@
 <script src="{{ asset('frontend') }}/plugins/slick-1.8.0/slick.js"></script>
 <script src="{{ asset('frontend') }}/plugins/easing/easing.js"></script>
 <script src="{{ asset('frontend') }}/js/custom.js"></script>
+<script src="{{ asset('frontend') }}/js/product_custom.js"></script>
+<script type="text/javascript" src="{{ asset('public/backend/plugins/toastr/toastr.min.js') }}"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+{{-- <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -271,7 +274,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
-</script>
+</script> --}}
 
 </body>
 
