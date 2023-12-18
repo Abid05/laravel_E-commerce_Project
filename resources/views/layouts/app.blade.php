@@ -264,17 +264,7 @@
 <script src="{{ asset('frontend') }}/plugins/easing/easing.js"></script>
 <script src="{{ asset('frontend') }}/js/custom.js"></script>
 <script src="{{ asset('frontend') }}/js/product_custom.js"></script>
-<script type="text/javascript" src="{{ asset('public/backend/plugins/toastr/toastr.min.js') }}"></script>
-
-{{-- <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script> --}}
+{{-- <script src="{{ asset('public/backend/plugins/toastr/toastr.min.js') }}"></script> --}}
 
 </body>
 
