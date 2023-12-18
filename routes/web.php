@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/login',function(){
+    return redirect()->to('/');
+})->name('login');
 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/customer/logout', [HomeController::class, 'logout'])->name('customer.logout');
 //Frontend routes
 
     Route::get('/',[IndexController::class,'index']);
