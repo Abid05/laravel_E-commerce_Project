@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
@@ -19,3 +20,6 @@ Route::get('/customer/logout', [HomeController::class, 'logout'])->name('custome
 
     Route::get('/',[IndexController::class,'index']);
     Route::get('/product-details/{slug}',[IndexController::class,'productDetails'])->name('product.details');
+
+    //review for product
+    Route::post('/store/review',[ReviewController::class,'store'])->name('store.review');
