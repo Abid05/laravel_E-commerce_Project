@@ -23,3 +23,4 @@ Route::get('/customer/logout', [HomeController::class, 'logout'])->name('custome
 
     //review for product
     Route::post('/store/review',[ReviewController::class,'store'])->name('store.review');
+    Route::get('/add/wishlist/{id}',[ReviewController::class,'addWishlist'])->name('add.wishlist');

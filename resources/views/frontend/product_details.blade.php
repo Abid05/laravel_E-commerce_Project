@@ -154,7 +154,16 @@
 												<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
 											</div>
 										</div>
-
+										<div class="button_container">
+											<div class="input-group mb-3">
+											  <div class="input-group-prepend">
+					
+												<button class="btn btn-outline-info" type="submit">Add to cart</button>
+			
+												<a href="{{ route('add.wishlist',$product->id) }}" class="btn btn-outline-primary" type="button">Add to wishlist</a>
+											  </div>
+											</div>
+										</div>
 										<!-- Product Color -->
 										<ul class="product_color">
 											<li>
@@ -170,11 +179,6 @@
 											</li>
 										</ul>
 
-									</div>
-
-									<div class="button_container">
-										<button type="button" class="button cart_button">Add to Cart</button>
-										<div class="product_fav"><i class="fas fa-heart"></i></div>
 									</div>
 									
 								</form>
